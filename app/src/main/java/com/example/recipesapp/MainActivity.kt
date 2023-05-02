@@ -2,34 +2,24 @@ package com.example.recipesapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.recipesapp.databinding.ActivityMainBinding
-import com.example.recipesapp.fragments.Adapters.ViewPagerAdapter
-import com.example.recipesapp.fragments.FastFoodFragment
-import com.example.recipesapp.fragments.HomeFragment
-import com.example.recipesapp.fragments.VeganFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setUpTabs()
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
+        navController.navigate(R.id.viewPagerFragment)
     }
 
-    private fun setUpTabs(){
-        val adapter = ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(HomeFragment(), "Home")
-        adapter.addFragment(VeganFragment(), "Vegan")
-        adapter.addFragment(FastFoodFragment(), "FastFood")
-        binding.viewPager.adapter = adapter
-        binding.tabs.setupWithViewPager(binding.viewPager)
-
-        binding.tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_fastfood_24)
-        binding.tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_home_24)
-        binding.tabs.getTabAt(2)!!.setIcon(R.drawable.ic_baseline_food_bank_24)
-    }
 }

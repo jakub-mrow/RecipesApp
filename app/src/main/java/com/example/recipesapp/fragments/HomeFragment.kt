@@ -2,12 +2,12 @@ package com.example.recipesapp.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.recipesapp.ApiService
 import com.example.recipesapp.databinding.FragmentHomeBinding
@@ -22,9 +22,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 import kotlin.collections.ArrayList
 
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var recipesList: ArrayList<Recipe>
+    private lateinit var mRecyclerViewAdapter: RecipeRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +39,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         recipesList = ArrayList()
 
-        val recyclerViewAdapter = RecipeRecyclerAdapter(recipesList)
+        mRecyclerViewAdapter = RecipeRecyclerAdapter(recipesList)
         binding.recipesRecyclerView.layoutManager = GridLayoutManager(context, 2)
 
         val retrofit: Retrofit = Retrofit.Builder().baseUrl("http://18.185.8.100/")
@@ -61,7 +62,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     }
                     binding.recipesRecyclerView.adapter?.notifyDataSetChanged()
 
-                    binding.recipesRecyclerView.adapter = recyclerViewAdapter
+                    binding.recipesRecyclerView.adapter = mRecyclerViewAdapter
 
                 }
             }
@@ -73,7 +74,21 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         })
 
+
         return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        mRecyclerViewAdapter.setOnItemClickListener(object : RecipeRecyclerAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                val navigationId = findNavController().currentDestination?.label
+                Toast.makeText(context, "Navigation id. $navigationId", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_viewPagerFragment_to_recipeFragment)
+            }
+        })
     }
 
 }

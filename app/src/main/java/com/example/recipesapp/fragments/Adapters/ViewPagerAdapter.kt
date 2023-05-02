@@ -21,6 +21,10 @@ class ViewPagerAdapter(supportFragmentManager: FragmentManager) : FragmentPagerA
         return mFragmentTitleList[position]
     }
 
+    override fun getItemPosition(`object`: Any): Int {
+        return POSITION_NONE;
+    }
+
     fun addFragment(fragment: Fragment, title: String){
         mFragmentList.add(fragment)
         mFragmentTitleList.add(title)
