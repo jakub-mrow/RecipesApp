@@ -2,6 +2,7 @@ package com.example.recipesapp.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.logging.Level.INFO
 import kotlin.collections.ArrayList
 
 
@@ -85,8 +87,19 @@ class HomeFragment : Fragment() {
         mRecyclerViewAdapter.setOnItemClickListener(object : RecipeRecyclerAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
                 val navigationId = findNavController().currentDestination?.label
-                Toast.makeText(context, "Navigation id. $navigationId", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_viewPagerFragment_to_recipeFragment)
+                //Toast.makeText(context, "Navigation id. $navigationId", Toast.LENGTH_SHORT).show()
+                val bundle = Bundle()
+                val currentRecipe: Recipe = recipesList.get(position)
+
+                bundle.putInt("recipeId", currentRecipe.id)
+                bundle.putString("recipeTitle", currentRecipe.title)
+                bundle.putString("recipeIngredients", currentRecipe.ingredients)
+                bundle.putString("recipeInstructions", currentRecipe.instructions)
+                Log.d("INGREDIENTS", currentRecipe.ingredients)
+                Log.d("INSTRUCTIONS", currentRecipe.instructions)
+                bundle.putString("recipeImageUrl", currentRecipe.image_name)
+
+                findNavController().navigate(R.id.action_viewPagerFragment_to_recipeFragment, bundle)
             }
         })
     }

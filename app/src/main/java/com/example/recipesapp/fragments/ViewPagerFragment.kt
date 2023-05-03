@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.example.recipesapp.R
 import com.example.recipesapp.databinding.FragmentViewPagerBinding
 import com.example.recipesapp.fragments.Adapters.ViewPagerAdapter
@@ -21,13 +22,21 @@ class ViewPagerFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentViewPagerBinding.inflate(layoutInflater)
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbarLayout)
 
         setUpTabs()
+        binding.viewPager.currentItem = 0
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        setUpTabs()
+    }
+
     private fun setUpTabs(){
-        val adapter = ViewPagerAdapter(requireActivity().supportFragmentManager)
+        // IMPROTANT LINE BELOW, DONT CHANGE childFragmentManager
+        val adapter = ViewPagerAdapter(childFragmentManager)
         adapter.addFragment(HomeFragment(), "Home")
         adapter.addFragment(VeganFragment(), "Vegan")
         adapter.addFragment(FastFoodFragment(), "FastFood")

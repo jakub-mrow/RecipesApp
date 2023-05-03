@@ -8,7 +8,11 @@
         android:id="@+id/recipeFragment"
         android:name="com.example.recipesapp.fragments.RecipeFragment"
         android:label="RecipeFragment"
-        tools:layout="@layout/fragment_recipe"/>
+        tools:layout="@layout/fragment_recipe">
+        <action
+            android:id="@+id/action_recipeFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
         android:name="com.example.recipesapp.fragments.ViewPagerFragment"
