@@ -118,6 +118,57 @@
                 android:justificationMode="inter_word"
                 />
 
+            <TextView
+                android:id="@+id/time_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textSize="56sp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="15dp"
+                >
+
+                <Button
+                    android:id="@+id/start_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/teal_200"
+                    android:text="start"
+                    />
+                <Button
+                    android:id="@+id/stop_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/teal_200"
+                    android:text="Stop"
+                    />
+
+                <Button
+                    android:id="@+id/reset_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/teal_200"
+                    android:text="Reset"
+                    />
+            </LinearLayout>
+
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
