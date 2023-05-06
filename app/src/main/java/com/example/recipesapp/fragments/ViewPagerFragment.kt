@@ -39,7 +39,7 @@ class ViewPagerFragment : Fragment() {
         val adapter = ViewPagerAdapter(childFragmentManager)
         adapter.addFragment(HomeFragment(), "Home")
         adapter.addFragment(CakeFragment(), "Cakes")
-        adapter.addFragment(FastFoodFragment(), "FastFood")
+        adapter.addFragment(SaladFragment(), "Salads")
         binding.viewPager.adapter = adapter
         binding.tabs.setupWithViewPager(binding.viewPager)
 

@@ -12,6 +12,6 @@ interface ApiService {
     @GET("/cake_recipes")
     fun getCakeRecipes(): Call<ArrayList<Recipe>>
 
-    @GET("/saladrecipes")
+    @GET("/salad_recipes")
     fun getSaladRecipes(): Call<ArrayList<Recipe>>
 }
