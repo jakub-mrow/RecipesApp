@@ -10,6 +10,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.example.recipesapp.databinding.ActivityMainBinding
+import com.example.recipesapp.fragments.BlankRecipeFragment
 import com.example.recipesapp.fragments.RecipeFragment
 
 
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val isTablet = resources.getBoolean(R.bool.isTablet)
 
         if (isTablet){
-            val detailsFragment = RecipeFragment()
+            val detailsFragment = BlankRecipeFragment()
             val ft = supportFragmentManager.beginTransaction()
             ft.replace(R.id.fragment_container, detailsFragment)
             ft.addToBackStack(null)
