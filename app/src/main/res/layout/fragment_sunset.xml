@@ -3,23 +3,47 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
+
     <FrameLayout
         android:id="@+id/sky"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="683dp"
         android:layout_weight="0.61"
-        android:background="@color/blue_sky">
+
+        android:background="@color/white">
 
         <ImageView
             android:id="@+id/sun"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:src="@drawable/sun" />
     </FrameLayout>
+
+    <View
+        android:id="@+id/first_frost"
+        android:layout_width="300dp"
+        android:layout_height="133dp"
+        android:layout_weight="0.29"
+        android:layout_gravity="center"
+        android:background="@color/frosting" />
+    <View
+        android:layout_width="300dp"
+        android:layout_height="227dp"
+        android:layout_weight="0.29"
+        android:layout_gravity="center"
+        android:background="@color/cake_base" />
     <View
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.39"
-        android:background="@color/sea" />
+        android:layout_height="133dp"
+        android:layout_weight="0.29"
+        android:background="@color/frosting" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
+        android:layout_weight="0.29"
+        android:background="@color/cake_base" />
 </LinearLayout>

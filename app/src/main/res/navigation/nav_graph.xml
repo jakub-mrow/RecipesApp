@@ -22,4 +22,12 @@
             android:id="@+id/action_viewPagerFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/sunsetFragment"
+        android:name="com.example.recipesapp.fragments.SunsetFragment"
+        android:label="SunsetFragment" >
+        <action
+            android:id="@+id/action_sunsetFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+    </fragment>
 </navigation>
