@@ -3,14 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/drawable-anydpi/ic_up_arrow.xml" value="0.179" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.179" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/drawable/ic_baseline_arrow_drop_up_24.xml" value="0.179" />
         <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/drawable/ic_baseline_fastfood_24.xml" value="0.307" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/drawable/ic_baseline_food_bank_24.xml" value="0.179" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.179" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.179" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/drawable/up_arrow.xml" value="0.179" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout-large/activity_main.xml" value="0.2019892884468248" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.20160673297628157" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout-sw600dp/fragment_fastfood.xml" value="0.2019892884468248" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout-sw600dp/fragment_home.xml" value="0.2019892884468248" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout-sw600dp/fragment_recipe.xml" value="0.2019892884468248" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout-sw600dp/fragment_tablet.xml" value="0.20160673297628157" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout-sw600dp/fragment_vegan.xml" value="0.2019892884468248" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout-sw600dp/fragment_view_pager.xml" value="0.20160673297628157" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout-sw600dp/recycler_view_recipe.xml" value="0.2019892884468248" />
         <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout/fragment_blank_recipe.xml" value="0.33" />
         <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout/fragment_fastfood.xml" value="0.55" />
         <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout/fragment_home.xml" value="0.26811594202898553" />
         <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout/fragment_recipe.xml" value="0.2674772036474164" />
         <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout/fragment_vegan.xml" value="0.26811594202898553" />
         <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout/fragment_view_pager.xml" value="0.1" />
-        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout/recycler_view_recipe.xml" value="0.5" />
+        <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/layout/recycler_view_recipe.xml" value="0.4288461538461538" />
         <entry key="..\:/Users/jakub/Desktop/RecipesApp/app/src/main/res/xml/network_security_config.xml" value="0.23505434782608695" />
         <entry key="..\:/Users/jakub/Desktop/mobile_dev/RecipesApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.444" />
         <entry key="..\:/Users/jakub/Desktop/mobile_dev/RecipesApp/app/src/main/res/layout/activity_main.xml" value="0.35733695652173914" />
