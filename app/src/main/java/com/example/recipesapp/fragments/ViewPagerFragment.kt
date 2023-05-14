@@ -43,8 +43,8 @@ class ViewPagerFragment : Fragment() {
         binding.viewPager.adapter = adapter
         binding.tabs.setupWithViewPager(binding.viewPager)
 
-        binding.tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_fastfood_24)
-        binding.tabs.getTabAt(1)!!.setIcon(R.drawable.ic_baseline_home_24)
-        binding.tabs.getTabAt(2)!!.setIcon(R.drawable.ic_baseline_food_bank_24)
+        binding.tabs.getTabAt(0)!!.setIcon(R.drawable.ic_baseline_home_24)
+        binding.tabs.getTabAt(1)!!.setIcon(R.drawable.baseline_cake_24)
+        binding.tabs.getTabAt(2)!!.setIcon(R.drawable.baseline_grass_24)
     }
 }
