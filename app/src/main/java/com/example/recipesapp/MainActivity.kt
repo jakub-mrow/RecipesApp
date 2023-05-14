@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
 
-        navController.navigate(R.id.sunsetFragment)
+        navController.navigate(R.id.animationFragment)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

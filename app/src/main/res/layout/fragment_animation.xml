@@ -5,6 +5,13 @@
     android:layout_height="match_parent">
 
 
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap on the screen to start!"
+        android:textSize="24sp"
+        android:gravity="center_horizontal" />
 
     <FrameLayout
         android:id="@+id/sky"
@@ -15,11 +22,11 @@
         android:background="@color/white">
 
         <ImageView
-            android:id="@+id/sun"
+            android:id="@+id/cherry"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:src="@drawable/sun" />
+            android:src="@drawable/cherry" />
     </FrameLayout>
 
     <View

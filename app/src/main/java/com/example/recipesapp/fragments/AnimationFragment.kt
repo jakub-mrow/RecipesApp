@@ -2,25 +2,23 @@ package com.example.recipesapp.fragments
 
 import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateInterpolator
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.recipesapp.R
-import com.example.recipesapp.databinding.FragmentSunsetBinding
+import com.example.recipesapp.databinding.FragmentAnimationBinding
 
-class SunsetFragment : Fragment() {
 
-    private lateinit var binding: FragmentSunsetBinding
+class AnimationFragment : Fragment() {
+
+    private lateinit var binding: FragmentAnimationBinding
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        binding = FragmentSunsetBinding.inflate(layoutInflater)
+        binding = FragmentAnimationBinding.inflate(layoutInflater)
     }
-
 
 
     override fun onCreateView(
@@ -28,14 +26,14 @@ class SunsetFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSunsetBinding.inflate(inflater, container, false)
+        binding = FragmentAnimationBinding.inflate(inflater, container, false)
 
-        binding.sun.setOnClickListener {
+        binding.cherry.setOnClickListener {
             startAnimation()
         }
 
         binding.sky.setOnClickListener {
-            findNavController().navigate(R.id.action_sunsetFragment_to_viewPagerFragment)
+            findNavController().navigate(R.id.action_animationFragment_to_viewPagerFragment)
 
         }
 
@@ -43,14 +41,12 @@ class SunsetFragment : Fragment() {
     }
 
     private fun startAnimation() {
-        // Animate the sun
-        val sunYStart = binding.sun.top.toFloat()
-        val sunYEnd = 1150.toFloat()
-        val heightAnimator = ObjectAnimator.ofFloat(binding.sun, "y", sunYStart, sunYEnd)
-            .setDuration(3000)
-        heightAnimator.interpolator = AccelerateInterpolator()
-        heightAnimator.start()
 
+        val cherryYStart = binding.cherry.top.toFloat()
+        val cherryYEnd = 1150.toFloat()
+        val heightAnimator = ObjectAnimator.ofFloat(binding.cherry, "y", cherryYStart, cherryYEnd)
+            .setDuration(3000)
+        heightAnimator.start()
 
     }
 
