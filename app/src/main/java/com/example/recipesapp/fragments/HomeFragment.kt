@@ -15,12 +15,12 @@ import com.example.recipesapp.databinding.FragmentHomeBinding
 import com.example.recipesapp.R
 import com.example.recipesapp.Recipe
 import com.example.recipesapp.fragments.Adapters.RecipeRecyclerAdapter
+import com.example.recipesapp.fragments.HomeFragment.Companion.newInstance
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.logging.Level.INFO
 import kotlin.collections.ArrayList
 
 
@@ -28,6 +28,21 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var recipesList: ArrayList<Recipe>
     private lateinit var mRecyclerViewAdapter: RecipeRecyclerAdapter
+
+
+    companion object {
+        fun newInstance(recipeId: Int, recipeTitle: String, recipeIngredients: String, recipeInstructions: String, recipeImageUrl: String): RecipeFragment {
+            val fragment = RecipeFragment()
+            val args = Bundle()
+            args.putInt("recipeId", recipeId)
+            args.putString("recipeTitle", recipeTitle)
+            args.putString("recipeIngredients", recipeIngredients)
+            args.putString("recipeInstructions", recipeInstructions)
+            args.putString("recipeImageUrl", recipeImageUrl)
+            fragment.arguments = args
+            return fragment
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -99,7 +114,18 @@ class HomeFragment : Fragment() {
                 Log.d("INSTRUCTIONS", currentRecipe.instructions)
                 bundle.putString("recipeImageUrl", currentRecipe.image_name)
 
-                findNavController().navigate(R.id.action_viewPagerFragment_to_recipeFragment, bundle)
+                val isTablet = resources.getBoolean(R.bool.isTablet)
+
+                if (isTablet){
+                    val recipeFragment: RecipeFragment = newInstance(currentRecipe.id, currentRecipe.title, currentRecipe.ingredients, currentRecipe.instructions, currentRecipe.image_name)
+                    val ft = requireActivity().supportFragmentManager.beginTransaction()
+                    ft.replace(R.id.fragment_container, recipeFragment)
+                    ft.addToBackStack(null)
+                    ft.commit()
+                } else {
+                    findNavController().navigate(R.id.action_viewPagerFragment_to_recipeFragment, bundle)
+                }
+
             }
         })
     }
